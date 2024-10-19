@@ -1,8 +1,15 @@
 import React from 'react'; // Import the image
 import backgroundImage from "../Assets/home.png";
+import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 
 const Home = () => {
+  const navigate = useNavigate(); // Initialize the navigation hook
+
+  const handleStartNow = () => {
+    navigate("/main"); // Navigate to the Main component when clicked
+  };
+
   return (
     <div
       className="bg-cover bg-center text-white h-screen w-full flex flex-col justify-between"
@@ -14,26 +21,28 @@ const Home = () => {
       }}
     >
       <Navbar />
-      <div className='flex-grow flex flex-col justify-center h-auto mx-4 sm:mx-8 md:mx-14 lg:mx-20 lg:text-left'>
-      <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-w-full lg:max-w-92 font-extrabold text-white'>
-  Get Cashback
-</h1>
-<h1 className='text-4xl shadow-mdsm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl max-w-full lg:max-w-92 font-extrabold text-white'>
-  up to 50%
-</h1>
-{/*  shadow-orange-200/50  */}
-        <p className='text-lg sm:text-xl md:text-xl lg:text-2xl mt-12'>
-          Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+      <div className='flex-grow flex flex-col justify-center items-center h-auto mx-4 sm:mx-8 md:mx-14 lg:mx-20 lg:text-left'>
+        <h1 className='text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-extrabold  drop-shadow-lg tracking-wide'>
+          CLICK ON
+        </h1>
+        <h1 className='text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-extrabold text-black drop-shadow-lg tracking-wide'>
+          START NOW
+        </h1>
+        
+        <p className='text-xl sm:text-2xl md:text-3xl lg:text-3xl mt-8 text-black text-center max-w-md leading-relaxed'>
+         CLICK ON START NOW
         </p>
-        <p className='text-lg sm:text-xl md:text-xl lg:text-2xl'>
-          Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+        
+        <p className='text-xl sm:text-2xl md:text-3xl lg:text-3xl text-black text-center max-w-md leading-relaxed'>
+          Join us today and start saving!
         </p>
-        <p className='text-lg sm:text-xl md:text-xl lg:text-2xl'>
-          Lorem ipsum dolor sit amet.
-        </p>
-          <button className='bg-red-500 w-56 h-24 sm:w-56  sm:h-24 md:w-56 md:h-24 lg:w-96 lg:h-24 xl:w-72 xl:h-12 border mt-5 rounded-full '>
-            Order Now
-          </button>
+        
+        <button
+          className='bg-red-600 hover:bg-red-700 transition duration-300 ease-in-out w-56 h-16 sm:w-64 sm:h-20 md:w-72 md:h-24 lg:w-80 lg:h-24 xl:w-96 xl:h-12 border mt-5 rounded-full shadow-lg transform hover:scale-105'
+          onClick={handleStartNow} // Handle click event
+        >
+          START NOW
+        </button>
       </div>
     </div>
   );
